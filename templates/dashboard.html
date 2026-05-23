@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <h1>AuthShield AI Dashboard</h1>
+
+    <h2>Login Activity Logs</h2>
+
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>IP Address</th>
+            <th>Status</th>
+            <th>Time</th>
+        </tr>
+
+        {% for log in logs %}
+        <tr>
+            <td>{{ log[0] }}</td>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td>{{ log[3] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <h2>Threat Logs</h2>
+
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Threat Level</th>
+            <th>Reason</th>
+            <th>Created At</th>
+        </tr>
+
+        {% for threat in threats %}
+        <tr>
+            <td>{{ threat[0] }}</td>
+            <td>{{ threat[1] }}</td>
+            <td>{{ threat[2] }}</td>
+            <td>{{ threat[3] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/logout">
+        <button>Logout</button>
+    </a>
+
+</div>
+
+</body>
+</html>
